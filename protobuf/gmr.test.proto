@@ -1,0 +1,6 @@
+package gmr;
+message test{
+    optional int32 id = 1;
+    optional string name = 2;
+    optional int32 scores = 3;
+} 

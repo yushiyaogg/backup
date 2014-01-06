@@ -1,0 +1,1 @@
+g++ -g -o c_mysql $(mysql_config --cflags) connmysql-nonpre.cpp $(mysql_config --libs)
