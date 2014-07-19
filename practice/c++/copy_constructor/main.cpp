@@ -15,7 +15,7 @@ class Clock{
         }
         Clock(Clock &p)
         {
-            cout << "copy constructor, vefore call:"<<H<<":"<<M<<":"<<S<<endl;
+            cout << "copy constructor, before call:"<<H<<":"<<M<<":"<<S<<endl;
             H = p.H;
             M = p.M;
             S = p.S;

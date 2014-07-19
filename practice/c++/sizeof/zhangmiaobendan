@@ -1,0 +1,10 @@
+# 1 "main.cpp"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "main.cpp"
+int main()
+{
+    int a[10];
+    sizeof(a);
+    return 0;
+}
