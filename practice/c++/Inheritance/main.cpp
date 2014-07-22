@@ -65,4 +65,5 @@ int main()
  //   child_ptr1 -> set_num(4);
   //  child_ptr1 -> show_num();
     child_ptr1->say_hello();
+//addingsome
 }
