@@ -62,7 +62,9 @@ int main(int argc,char ** argv)
             continue;
         }
         cout << "before close"<<endl;
-        close(connfd);
+//	int ret = write(connfd,"abcde",3);
+ //       close(connfd);
+	shutdown(connfd,2);
         continue;
         /*
         if((ret = read(connfd,&head,sizeof(head))) < 0)

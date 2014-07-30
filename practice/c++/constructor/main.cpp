@@ -4,21 +4,19 @@ using namespace std;
 class Clock
 {
     private:
-        int H,M,S;
     public:
+        int H,M,S;
         
-   /*     Clock()
-        {
-            H = 0;
-            M = 0;
-            S = 0;
-        }*/
-        Clock(int h , int m , int s )
+      /*  Clock(int h , int m , int s )
         {
             H = h;
             M = m;
             S = s;
-        }
+        }*/
+/*	Clock()
+	{
+		H = M = S = 0;
+	}*/
 
         int SetTime(int h, int m, int s)
         {
@@ -39,11 +37,21 @@ class Clock
         }
 
 };
-
+class A:public Clock
+{
+public:
+	int a1;
+	int a2;
+//	Clock C1;
+};
 int main()
 {
-    Clock *Myclock = new Clock();
-    Myclock -> ShowTime();
-    Myclock -> SetTime(8,30,45);
-    Myclock -> ShowTime();
+    //Clock *Myclock = new Clock(1,1,1);
+    //Myclock -> ShowTime();
+    //Myclock -> SetTime(8,30,45);
+    //Myclock -> ShowTime();
+    A a;
+    cout << "a.a1:"<<a.a1<<endl;
+    cout << "a.a2:"<<a.a2<<endl;
+  //  cout << "a.C1"<<a.C1.H<<endl;
 }
