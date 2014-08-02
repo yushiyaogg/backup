@@ -18,10 +18,13 @@
 #include <iostream>
 #include <sys/socket.h>
 #include <unistd.h>
+#include <sys/types.h>
 #include <netinet/in.h>
 #include <errno.h>
 #include <string.h>
 #include <arpa/inet.h>
+#include <unistd.h>
+#include <fcntl.h>
 #define  PORTNUM 50001
 using namespace std;
 struct message_head
@@ -52,6 +55,19 @@ int main(int argc,char ** argv)
         cout<<"bind error"<<endl;
         return -1;
     }
+  /*   int flag;
+    if((flag = fcntl(listenfd, F_GETFL, 0)) < 0)
+    {
+        cerr<<"fcntl error:"<<"\n"<<endl;
+        return -1;
+    }
+    if(fcntl(listenfd,F_SETFL,flag|O_NONBLOCK) < 0)
+    {
+        cerr<<"fcntl error:"<<"\n"<<endl;
+        return -1;
+    }*/
+
+
     listen(listenfd,50);
     while(1)
     {
@@ -62,7 +78,8 @@ int main(int argc,char ** argv)
             continue;
         }
         cout << "before close"<<endl;
-//	int ret = write(connfd,"abcde",3);
+	char *ptr = new char[4];
+	ret = read(connfd,ptr,3);
  //       close(connfd);
 	shutdown(connfd,2);
         continue;
